@@ -1,0 +1,14 @@
+# macOS system files
+.DS_Store
+
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+
+# Logs and database
+backend.log
+vectorstore/
+*.sqlite3
+

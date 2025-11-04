@@ -11,8 +11,11 @@ from langchain.document_loaders import DirectoryLoader, TextLoader
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import RetrievalQA
 import os
+from dotenv import load_dotenv
 
-# ✅ Load your OpenAI API key
+# ✅ Load .env variables
+load_dotenv()
+
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 if not OPENAI_API_KEY:
     raise ValueError("⚠️ OPENAI_API_KEY environment variable not set!")
