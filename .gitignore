@@ -12,3 +12,5 @@ backend.log
 vectorstore/
 *.sqlite3
 
+.DS_Store
+vectorstore/chroma.sqlite3
