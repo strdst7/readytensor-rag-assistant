@@ -1,0 +1,4 @@
+Ready Tensor is a platform for AI model deployment and reproducible research.
+It supports model sharing, benchmarking, and evaluation.
+The Ready Tensor RAG Assistant helps users explore research publications through natural language.
+
