@@ -1,3 +1,48 @@
+# ----------------------------
+# macOS system files
+# ----------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ----------------------------
+# Python virtual environment
+# ----------------------------
+venv/
+env/
+__pycache__/
+*.py[cod]
+
+# ----------------------------
+# Logs and databases
+# ----------------------------
+*.log
+*.sqlite3
+vectorstore/
+backend.log
+
+# ----------------------------
+# Environment variables
+# ----------------------------
+.env
+
+# ----------------------------
+# Screenshots and local assets
+# ----------------------------
+assets/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+
+# ----------------------------
+# IDE / Editor settings
+# ----------------------------
+.vscode/
+.idea/
+*.swp
 # macOS system files
 .DS_Store
 
