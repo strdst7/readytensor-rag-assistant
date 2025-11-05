@@ -91,7 +91,7 @@ python3 -m uvicorn src.api_server:app --reload --port 8000
 streamlit run src/app_ui.py
 ```
 
-Then visit 👉 [http://localhost:8502](http://localhost:8502)
+Then visit 👉 [http://localhost:8502](http://localhost:8501)
 
 ---
 
