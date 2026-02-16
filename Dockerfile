@@ -1,23 +1,34 @@
-# Use official Python image
+# Use official lightweight Python image
 FROM python:3.9-slim
+
+# Prevent Python from writing .pyc files
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
 # Set working directory
 WORKDIR /app
 
-# Copy project files
-COPY . .
+# Install system dependencies (if needed for Chroma / SQLite)
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
 
-# Install dependencies
+# Copy requirements first (for caching)
+COPY requirements.txt .
+
+# Upgrade pip and install dependencies
 RUN pip install --no-cache-dir --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose Streamlit port
+# Copy project files
+COPY . .
+
+# Make run script executable
+RUN chmod +x run_all.sh
+
+# Expose ports
 EXPOSE 8501
+EXPOSE 8000
 
-# Environment variable for Streamlit
-ENV PYTHONUNBUFFERED=1
-
-# Run both backend and frontend
-CMD bash run_all.sh
-
-
+# Start application
+CMD ["bash", "run_all.sh"]
