@@ -1,0 +1,53 @@
+# ==============================
+# OS Files
+# ==============================
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ==============================
+# Python
+# ==============================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# ==============================
+# Logs & Databases
+# ==============================
+*.log
+backend.log
+*.sqlite3
+vectorstore/
+
+# ==============================
+# Environment Variables
+# ==============================
+.env
+
+# ==============================
+# IDE / Editor
+# ==============================
+.vscode/
+.idea/
+*.swp
+
+# ==============================
+# Build / Distribution
+# ==============================
+build/
+dist/
+*.egg-info/
+
+# ==============================
+# System / Node junk (safety)
+# ==============================
+node_modules/
+package-lock.json
