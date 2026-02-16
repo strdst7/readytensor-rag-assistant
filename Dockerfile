@@ -19,3 +19,7 @@ ENV PYTHONUNBUFFERED=1
 
 # Run both backend and frontend
 CMD bash run_all.sh
+
+docker build -t rag-assistant .
+docker run -p 8501:8501 rag-assistant
+http://localhost:8501
