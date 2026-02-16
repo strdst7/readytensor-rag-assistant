@@ -1,8 +1,8 @@
 🧠 Ready Tensor RAG Assistant
-
 Chat with Your Publications — Powered by LangChain & OpenAI
 
 A lightweight, domain-specific Retrieval-Augmented Generation (RAG) system that enables intelligent querying of Ready Tensor publications.
+
 ## 🔖 Version
 
 Current Release: **v1.0.0**
