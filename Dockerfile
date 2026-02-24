@@ -1,34 +1,22 @@
-# Use official lightweight Python image
-FROM python:3.9-slim
+# 🧠 Ready Tensor RAG Assistant — Dockerfile for Render (Streamlit-first)
 
-# Prevent Python from writing .pyc files
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
+# Base image
+FROM python:3.10-slim
 
 # Set working directory
 WORKDIR /app
 
-# Install system dependencies (if needed for Chroma / SQLite)
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    && rm -rf /var/lib/apt/lists/*
+# Copy project files
+COPY . /app
 
-# Copy requirements first (for caching)
-COPY requirements.txt .
-
-# Upgrade pip and install dependencies
-RUN pip install --no-cache-dir --upgrade pip
+# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy project files
-COPY . .
+# Expose Streamlit port
+EXPOSE 10000
 
-# Make run script executable
-RUN chmod +x run_all.sh
+# Set environment variable (Render will override this)
+ENV OPENAI_API_KEY=${OPENAI_API_KEY}
 
-# Expose ports
-EXPOSE 8501
-EXPOSE 8000
-
-# Start application
+# Default command: Run Streamlit app
 CMD ["bash", "run_all.sh"]
