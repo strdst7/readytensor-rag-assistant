@@ -1,7 +1,7 @@
 # 🧠 Ready Tensor RAG Assistant — Dockerfile for Render (Streamlit-first)
 
 # Base image
-FROM python:3.10-slim
+FROM python:3.15-slim
 
 # Set working directory
 WORKDIR /app
